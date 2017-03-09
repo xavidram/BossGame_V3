@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\AbilitySystem\Behaviors\AreaOfEffect.cs" />
     <Compile Include="Assets\Scripts\AbilitySystem\Behaviors\DamageOverTime.cs" />
     <Compile Include="Assets\Scripts\AbilitySystem\Behaviors\Ranged.cs" />
+    <Compile Include="Assets\Scripts\AbilitySystem\Behaviors\Slow.cs" />
     <Compile Include="Assets\Scripts\BasicObjectInformation.cs" />
     <Compile Include="Assets\Scripts\Character Classes\BaseCharacterClass.cs" />
     <Compile Include="Assets\Scripts\Character Classes\BaseWarriorClass.cs" />

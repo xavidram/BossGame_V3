@@ -5,8 +5,8 @@ using UnityEngine;
 public class Ranged : AbilityBehavior
 {
 
-    private const string name = "Ranged";
-    private const string desc = "Ranged Attack Class";
+    private const string aName = "Ranged";
+    private const string aDesc = "Ranged Attack Class";
     //private const Sprite icon = Resources.Load(); //set path when get sprite
     private const BehaviorStartTime startTime = BehaviorStartTime.Beginning;
 
@@ -16,7 +16,7 @@ public class Ranged : AbilityBehavior
     private bool isRandomOn;
     private float lifeDistance; //Maximum distance before object is destroyed and disapears from scene
 
-    public Ranged(float minDist, float maxDist, bool isRandom) : base(new BasicObjectInformation(name, desc), startTime)
+    public Ranged(float minDist, float maxDist, bool isRandom) : base(new BasicObjectInformation(aName, aDesc), startTime)
     {
         maxDistance = maxDist;
         minDistance = minDist;
@@ -24,10 +24,10 @@ public class Ranged : AbilityBehavior
         // Do we want random distance or a fixed distance before object is deleted.
     }
 
-    public override void PerformBehavior(Vector3 startPosition)
+    public override void PerformBehavior(GameObject Player, GameObject obj)
     {
         lifeDistance = isRandomOn ? Random.Range(minDistance, maxDistance) : maxDistance;
-        StartCoroutine(CheckDistance(startPosition));
+        StartCoroutine(CheckDistance(Player.transform.position));
     }
 
     // Co-Routine to check distance

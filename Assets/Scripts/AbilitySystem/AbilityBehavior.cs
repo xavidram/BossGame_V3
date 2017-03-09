@@ -18,7 +18,8 @@ public class AbilityBehavior : MonoBehaviour {
         Beginning, Middle, End
     }
 
-    public virtual void PerformBehavior(Vector3 startPosition)
+    //Pass in the object instead of position, for other effects
+    public virtual void PerformBehavior(GameObject Player,GameObject obj)
     {
         Debug.LogWarning("Need To Add Behavior");
     }

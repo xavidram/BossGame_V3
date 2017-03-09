@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
+[RequireComponent(typeof(CircleCollider2D))]
 public class AreaOfEffect : AbilityBehavior{
 
-    private const string name = "Area of Effect";
-    private const string desc = "Damage dealt to any entity within object area";
+    private const string aName = "Area of Effect";
+    private const string aDesc = "Damage dealt to any entity within object area";
     //private const Sprite icon = Resources.Load(); //set path when get sprite
     private const BehaviorStartTime startTime = BehaviorStartTime.End;
 
@@ -18,8 +19,7 @@ public class AreaOfEffect : AbilityBehavior{
     private bool isOccupied;
     private float damageTickDuration;
 
-
-    public AreaOfEffect(float radius, float Duration, float Damage) : base(new BasicObjectInformation(name, desc), startTime)
+    public AreaOfEffect(float radius, float Duration, float Damage) : base(new BasicObjectInformation(aName, aDesc), startTime)
     {
         areaRadius = radius;
         effectDuration = Duration;
@@ -27,16 +27,9 @@ public class AreaOfEffect : AbilityBehavior{
         isOccupied = false;
     }
 
-    public override void PerformBehavior(Vector3 startPosition)
+    public override void PerformBehavior(GameObject Player, GameObject obj)
     {
-        CircleCollider2D colider;
-
-        //  Check if OBJ has sphere colider 2d
-        if (this.gameObject.GetComponent<CircleCollider2D>() == null)
-             colider = this.gameObject.AddComponent<CircleCollider2D>();
-        else
-            colider = this.gameObject.GetComponent<CircleCollider2D>();
-
+        CircleCollider2D colider = this.gameObject.GetComponent<CircleCollider2D>();
         colider.radius = areaRadius;
         colider.isTrigger = true;
 
@@ -51,6 +44,7 @@ public class AreaOfEffect : AbilityBehavior{
             if (isOccupied)
             {
                 //do Damage
+                //onDamage(list<targets>, baseDamage);
             }
             yield return new WaitForSeconds(damageTickDuration);
         }

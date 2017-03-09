@@ -9,7 +9,7 @@ public class Ability {
     private List<AbilityBehavior> behaviors;
     private bool requiresTarget;
     private bool canCastOnSelf;
-    private int cooldownTime;
+    private float cooldownTime;
     private AbilityType type;
     // End Private Variables
    
@@ -19,6 +19,15 @@ public class Ability {
     }
 
     // Constructors
+    public Ability(BasicObjectInformation BasicInfo)
+    {
+        objInfo = BasicInfo;
+        behaviors = new List<global::AbilityBehavior>();
+        cooldownTime = 0f;
+        requiresTarget = false;
+        canCastOnSelf = false;
+    }
+
     public Ability(BasicObjectInformation BasicInfo, List<AbilityBehavior> Behaviors)
     {
         objInfo = BasicInfo;
@@ -58,7 +67,7 @@ public class Ability {
     {
         get { return behaviors; }
     }
-    public int CoolDownTime
+    public float CoolDownTime
     {
         get { return cooldownTime; }
     }
