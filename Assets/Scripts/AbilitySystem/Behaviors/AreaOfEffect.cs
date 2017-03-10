@@ -27,13 +27,15 @@ public class AreaOfEffect : AbilityBehavior{
         isOccupied = false;
     }
 
-    public override void PerformBehavior(GameObject Player, GameObject obj)
+    public override void PerformBehavior(GameObject Player, GameObject abilityPrefab)
     {
+        /*
         CircleCollider2D colider = this.gameObject.GetComponent<CircleCollider2D>();
         colider.radius = areaRadius;
         colider.isTrigger = true;
 
         StartCoroutine(AOE());
+        */
     }
 
     private IEnumerator AOE()

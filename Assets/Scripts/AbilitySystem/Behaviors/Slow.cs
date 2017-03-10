@@ -23,7 +23,7 @@ public class Slow : AbilityBehavior {
 
     public override void PerformBehavior(GameObject Player, GameObject obj)
     {
-        StartCoroutine(SlowMovement(obj));
+        //StartCoroutine(SlowMovement(obj));
     }
 
     private IEnumerator SlowMovement(GameObject obj)

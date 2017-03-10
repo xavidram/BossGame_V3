@@ -78,15 +78,18 @@
     <Compile Include="Assets\Scripts\AbilitySystem\Abilities\FireBall.cs" />
     <Compile Include="Assets\Scripts\AbilitySystem\Ability.cs" />
     <Compile Include="Assets\Scripts\AbilitySystem\AbilityBehavior.cs" />
+    <Compile Include="Assets\Scripts\AbilitySystem\AbilityCast.cs" />
     <Compile Include="Assets\Scripts\AbilitySystem\Behaviors\AreaOfEffect.cs" />
     <Compile Include="Assets\Scripts\AbilitySystem\Behaviors\DamageOverTime.cs" />
     <Compile Include="Assets\Scripts\AbilitySystem\Behaviors\Ranged.cs" />
     <Compile Include="Assets\Scripts\AbilitySystem\Behaviors\Slow.cs" />
     <Compile Include="Assets\Scripts\BasicObjectInformation.cs" />
+    <Compile Include="Assets\Scripts\BossBehavior\BossBehavior.cs" />
     <Compile Include="Assets\Scripts\Character Classes\BaseCharacterClass.cs" />
     <Compile Include="Assets\Scripts\Character Classes\BaseWarriorClass.cs" />
     <Compile Include="Assets\Scripts\GUI.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\JobManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerBehavior\PlayerMovement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

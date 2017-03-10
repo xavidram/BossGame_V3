@@ -7,6 +7,7 @@ public class BasicObjectInformation {
     private string name;
     private string description;
     private Sprite icon;
+    private float health;
 
     // Constructors
     public BasicObjectInformation(string Name)
@@ -20,11 +21,26 @@ public class BasicObjectInformation {
         description = Description;
     }
 
+
+    public BasicObjectInformation(string Name, float Health)
+    {
+        name = Name;
+        health = Health;
+    }
+
     public BasicObjectInformation(string Name, string Description, Sprite Icon)
     {
         name = Name;
         description = Description;
         icon = Icon;
+    }
+
+    public BasicObjectInformation(string Name, string Description, Sprite Icon, float Health)
+    {
+        name = Name;
+        description = Description;
+        icon = Icon;
+        health = Health;
     }
 
     public string Name
@@ -43,6 +59,12 @@ public class BasicObjectInformation {
     {
         get { return icon; }
         set { icon = value; }
+    }
+
+    public float Health
+    {
+        get { return health; }
+        set { health = value; }
     }
 
 }

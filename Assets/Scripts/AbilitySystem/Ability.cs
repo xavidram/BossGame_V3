@@ -7,6 +7,7 @@ public class Ability {
     // Private Variables
     private BasicObjectInformation objInfo;
     private List<AbilityBehavior> behaviors;
+    private GameObject abilityPrefab;
     private bool requiresTarget;
     private bool canCastOnSelf;
     private float cooldownTime;
@@ -35,6 +36,16 @@ public class Ability {
         behaviors = Behaviors;
         requiresTarget = false;
         canCastOnSelf = false;
+    }
+
+    public Ability(BasicObjectInformation BasicInfo, List<AbilityBehavior> Behaviors, GameObject AbilityPrefab)
+    {
+        objInfo = BasicInfo;
+        behaviors = new List<AbilityBehavior>();
+        behaviors = Behaviors;
+        requiresTarget = false;
+        canCastOnSelf = false;
+        abilityPrefab = AbilityPrefab;
     }
 
     public Ability(BasicObjectInformation BasicInfo, List<AbilityBehavior> Behaviors, int CoolDownTime)
@@ -79,6 +90,21 @@ public class Ability {
     {
         get { return canCastOnSelf; }
     }
+    public GameObject AbilityPrefab
+    {
+        set { abilityPrefab = value; }
+    }
     //End Getters
+
+    public virtual void UseAbility(GameObject Player)
+    {
+        foreach (AbilityBehavior b in behaviors)
+        {
+            if(b.AbilityBehaviorStartTime == global::AbilityBehavior.BehaviorStartTime.Beginning)
+            {
+                b.PerformBehavior(Player, abilityPrefab);
+            }
+        }
+    }
 
 }

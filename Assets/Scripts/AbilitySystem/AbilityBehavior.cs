@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityBehavior : MonoBehaviour {
+public class AbilityBehavior {
 
     private BasicObjectInformation objectInfo;
     private BehaviorStartTime startTime;

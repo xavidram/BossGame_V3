@@ -26,7 +26,7 @@ public class DamageOverTime : AbilityBehavior {
 
     public override void PerformBehavior(GameObject Player, GameObject obj)
     {
-        StartCoroutine(DOT());
+        //StartCoroutine(DOT());
     }
 
     private IEnumerator DOT()
